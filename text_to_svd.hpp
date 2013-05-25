@@ -16,10 +16,12 @@ class text_to_svd
 {
 public:
     text_to_svd(QString &inputData);
+    const QStringList& get_words_list();
 private :
     void remove_stopSymbols(QString &inputData);
     void stemmer();
     void stemm(struct sb_stemmer *stemmer);
+    void stemm_c(struct sb_stemmer *stemmer);
     void printWords()const;
     QStringList words;
 };

@@ -13,7 +13,7 @@ CONFIG   += console
 CONFIG   -= app_bundle
 
 TEMPLATE = app
-
+LIBS += -lgsl -lgslcblas -lm
 
 SOURCES += main.cpp \
     stemming.cpp \
@@ -51,7 +51,8 @@ SOURCES += main.cpp \
     src_c/stem_ISO_8859_1_english.c \
     src_c/stem_ISO_8859_1_dutch.c \
     src_c/stem_ISO_8859_1_danish.c \
-    text_to_svd.cpp
+    text_to_svd.cpp \
+    matrixx.cpp
 
 HEADERS += \
     stemming.hpp \
@@ -92,10 +93,12 @@ HEADERS += \
     src_c/stem_ISO_8859_1_english.h \
     src_c/stem_ISO_8859_1_dutch.h \
     src_c/stem_ISO_8859_1_danish.h \
-    text_to_svd.hpp
+    text_to_svd.hpp \
+    matrixx.hpp
 
 OTHER_FILES += \
     README.md \
     libstemmer/modules_utf8.txt \
     libstemmer/modules.txt \
-    stop_symbols
+    stop_symbols \
+    matrix_test_print
